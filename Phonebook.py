@@ -1,5 +1,6 @@
 #importing json library
 import json
+import pyperclip
 
 # loading contact from json file
 try:
@@ -64,7 +65,16 @@ with open("Phonebook.json", "w") as file:
 #informing user 
 print(f"Update contact details are",Phonebook)
 print("contacts have been saved")
-     
+
+def contact_share(Phonebook):
+     pyperclip.copy(Phonebook)
+
+
+Copy =input("Do you want to share this contact? (Yes/No)").strip().capitalize()
+if(Copy=="Yes"):
+     contact_share(Phonebook)
+else:
+     print("Thanks we are closing...")
     
      
 
